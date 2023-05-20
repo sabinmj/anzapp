@@ -1,5 +1,6 @@
 package com.sabin.anzapp.di.module
 
+import com.sabin.anzapp.data.api.GetSpaceXApiService
 import com.sabin.anzapp.di.BaseUrl
 import dagger.Module
 import dagger.Provides
@@ -44,4 +45,10 @@ object NetworkModule {
         .baseUrl(baseUrl)
         .addConverterFactory(gsonConverterFactory)
         .build()
+
+
+    @Provides
+    fun provideSpaceXApiService(retrofit: Retrofit): GetSpaceXApiService {
+        return retrofit.create(GetSpaceXApiService::class.java)
+    }
 }
