@@ -1,4 +1,4 @@
-package com.sabin.anzapp.viewmodel
+package com.sabin.anzapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

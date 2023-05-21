@@ -1,4 +1,4 @@
-package com.sabin.anzapp
+package com.sabin.anzapp.ui.launch
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.sabin.anzapp.ui.launch.LaunchScreen
+import com.sabin.anzapp.R
 import com.sabin.anzapp.ui.theme.AnzAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

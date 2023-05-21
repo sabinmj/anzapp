@@ -10,7 +10,7 @@ This app is designed to display a list of SpaceX launches and provides two scree
 
 ### Unit Tests.
 - **Repository**
-- 
+- **ViewModel**
 ### App built on following:
 
 - MVVM Architecture
@@ -20,6 +20,7 @@ This app is designed to display a list of SpaceX launches and provides two scree
 - Retrofit
 - Coroutines
 - Flow
+- 
 
 ### Package Structure
 

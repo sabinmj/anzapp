@@ -1,6 +1,8 @@
 package com.sabin.anzapp.di.module
 
 import com.sabin.anzapp.data.api.GetSpaceXApiService
+import com.sabin.anzapp.data.repository.SpaceXLaunchesRepository
+import com.sabin.anzapp.data.repository.SpaceXLaunchesRepositoryImpl
 import com.sabin.anzapp.di.BaseUrl
 import dagger.Module
 import dagger.Provides
@@ -50,5 +52,10 @@ object NetworkModule {
     @Provides
     fun provideSpaceXApiService(retrofit: Retrofit): GetSpaceXApiService {
         return retrofit.create(GetSpaceXApiService::class.java)
+    }
+
+    @Provides
+    fun provideSpaceXLaunchesRepository(apiService: GetSpaceXApiService): SpaceXLaunchesRepository {
+        return SpaceXLaunchesRepositoryImpl(apiService)
     }
 }

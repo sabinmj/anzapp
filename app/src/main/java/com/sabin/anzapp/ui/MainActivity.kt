@@ -1,9 +1,10 @@
-package com.sabin.anzapp
+package com.sabin.anzapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.sabin.anzapp.R
 import com.sabin.anzapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

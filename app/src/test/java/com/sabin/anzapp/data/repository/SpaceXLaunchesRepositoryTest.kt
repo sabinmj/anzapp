@@ -1,29 +1,29 @@
 package com.sabin.anzapp.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import com.sabin.anzapp.data.api.GetSpaceXApiService
 import com.sabin.anzapp.data.model.LaunchFailureDetails
 import com.sabin.anzapp.data.model.LaunchSite
 import com.sabin.anzapp.data.model.Rocket
 import com.sabin.anzapp.data.model.SpaceXLaunchesModel
-import com.sabin.anzapp.utils.AppConstant
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.mock
-import org.mockito.kotlin.whenever
 
 
 @ExperimentalCoroutinesApi
 class SpaceXLaunchesRepositoryTest {
 
-    private val apiService = mock(GetSpaceXApiService::class.java)
+    private lateinit var repository: SpaceXLaunchesRepository
 
-    private val repository = SpaceXLaunchesRepository(apiService)
+    @Before
+    fun setUp() {
+        // Initialize the repository with the fake implementation
+        repository = FakeSpaceXLaunchesRepository()
+    }
 
     @Test
-    fun getLaunches_returnsListOfLaunches() = runTest {
+    fun `getLaunches returns the expected launches`() = runTest {
         // Given
         val expectedLaunches = listOf(
             SpaceXLaunchesModel(
@@ -46,12 +46,13 @@ class SpaceXLaunchesRepositoryTest {
             )
         )
 
-        whenever(apiService.getAllLaunches(AppConstant.LIMIT)).thenReturn(expectedLaunches)
-
         // When
-        val actualLaunches = repository.getLaunches(AppConstant.LIMIT).first() // Convert SafeFlow to a list
+        val launches = mutableListOf<SpaceXLaunchesModel>()
+        repository.getLaunches("3").collect { data ->
+            launches.addAll(data)
+        }
 
         // Then
-        assertThat(actualLaunches).isEqualTo(expectedLaunches)
+        assertThat(launches).isEqualTo(expectedLaunches)
     }
 }

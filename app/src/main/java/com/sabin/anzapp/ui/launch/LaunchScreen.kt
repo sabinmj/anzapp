@@ -22,11 +22,11 @@ import com.sabin.anzapp.data.model.Rocket
 import com.sabin.anzapp.data.model.SpaceXLaunchesModel
 import com.sabin.anzapp.ui.base.UiState
 import com.sabin.anzapp.ui.theme.AnzAppTheme
-import com.sabin.anzapp.viewmodel.MainViewModel
+import com.sabin.anzapp.ui.viewmodel.MainViewModel
 
 
 @Composable
-fun LaunchScreen(viewModel: MainViewModel = hiltViewModel(),onClick: () -> Unit) {
+fun LaunchScreen(viewModel: MainViewModel = hiltViewModel(), onClick: () -> Unit) {
     val uiState by viewModel.uiState.collectAsState()
 
     when (uiState) {
