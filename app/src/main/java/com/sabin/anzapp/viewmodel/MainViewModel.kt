@@ -29,7 +29,7 @@ class MainViewModel @Inject constructor(
     /**
      * Fetches all launches from the SpaceXLaunchesRepository and updates the UI state accordingly.
      */
-    private fun fetchAllLaunches() {
+    fun fetchAllLaunches() {
         viewModelScope.launch {
             spaceXLaunchesRepository.getLaunches(AppConstant.LIMIT)
                 .catch { e ->
