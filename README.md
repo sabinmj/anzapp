@@ -1,4 +1,4 @@
-# Schools List App. [![Android CI](https://github.com/sabinmj/anzapp/actions/workflows/android.yml/badge.svg)](https://github.com/sabinmj/anzapp/actions/workflows/android.yml)   [![Unit Tests](https://github.com/sabinmj/anzapp/actions/workflows/unittests.yml/badge.svg)](https://github.com/sabinmj/anzapp/actions/workflows/unittests.yml)
+# SpaceX Launches. [![Android CI](https://github.com/sabinmj/anzapp/actions/workflows/android.yml/badge.svg)](https://github.com/sabinmj/anzapp/actions/workflows/android.yml)   [![Unit Tests](https://github.com/sabinmj/anzapp/actions/workflows/unittests.yml/badge.svg)](https://github.com/sabinmj/anzapp/actions/workflows/unittests.yml)
 
 This app is designed to display a list of SpaceX launches and provides two screens .
 
@@ -19,8 +19,8 @@ This app is designed to display a list of SpaceX launches and provides two scree
 - Hilt
 - Retrofit
 - Coroutines
-- Flow
-- 
+- Flow 
+- Navigation component
 
 ### Package Structure
 
